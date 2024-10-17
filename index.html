@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Producto - E-commerce</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">   
+    <style>
+        body {
+            font-family: "Roboto", sans-serif;
+            background-color: #e0f7fa; 
+        }
+        .card {
+            transition: box-shadow 0.3s ease-in-out;
+            display: inline-block;
+            width: 300px;
+            margin: 15px;
+            border-radius: 8px; 
+            overflow: hidden; 
+        }
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+        .card-action a {
+            display: block; 
+            margin-bottom: 10px; 
+            border-radius: 20px; 
+        }
+        .container {
+            margin-top: 30px;
+            overflow-x: auto; 
+            white-space: nowrap; 
+        }
+        .row {
+            display: inline-flex; 
+            flex-wrap: nowrap; 
+        }
+        .card-content, .card-action {
+            padding: 16px; 
+        }
+        .card-content p {
+            white-space: normal; 
+            color: #555; 
+        }
+        .card-image img {
+            max-height: 200px; 
+            object-fit: cover; 
+        }
+        .welcome-message {
+            display: none; 
+            position: fixed; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #4caf50; 
+            color: white; 
+            padding: 20px; 
+            border-radius: 8px; 
+            z-index: 1000; 
+            animation: fadeIn 0.5s, fadeOut 0.5s 2s; 
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+        @media (max-width: 600px) {
+            .container {
+                overflow-x: auto; 
+                white-space: nowrap; 
+            }
+            .row {
+                display: inline-block; 
+            }
+            .card {
+                display: block; 
+                width: 100%; 
+                margin: 10px 0; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="center-align">Shoes</h2>
+        <div class="row">
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="tenis.jpg" alt="Producto">
+                        <span class="card-title">Tenis Nike</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Inspirada en el AJ1 original, esta edición de corte mid mantiene el look icónico que te encanta, y los colores selectos y el cuero impecable le dan una identidad distintiva.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#" class="waves-effect waves-light btn orange">Agregar al Carrito</a>
+                        <a href="#" class="waves-effect waves-light btn grey">Ver Más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="images.jpg" alt="Producto">
+                        <span class="card-title">Tenis Adidas</span>
+                    </div>
+                    <div class="card-content">
+                        <p>La misma calidad y estilo en un diseño único. Disfruta de la comodidad y el rendimiento con estos tenis Nike, diseñados para quienes buscan lo mejor en cada paso.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#" class="waves-effect waves-light btn orange">Agregar al Carrito</a>
+                        <a href="#" class="waves-effect waves-light btn grey">Ver Más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="center-align">
+            <a href="#" class="waves-effect waves-light btn green" id="welcomeBtn">Presionar</a>
+        </div>
+        <div class="welcome-message" id="welcomeMessage">¡Bienvenido!</div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.getElementById("welcomeBtn").addEventListener("click", function() {
+            const message = document.getElementById("welcomeMessage");
+            message.style.display = "block"; 
+            setTimeout(() => {
+                message.style.display = "none"; 
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
